@@ -4,7 +4,7 @@ function rand(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
-function wait(msg, tempo) {
+function esperaAi(msg, tempo) {
   return new Promise((resolve, reject) => {
 
     if (typeof msg !== 'string') reject('bad value')
@@ -15,7 +15,7 @@ function wait(msg, tempo) {
   });
 }
 
-wait('Conexão com o BD', rand(1, 3))
+esperaAi('Conexão com o BD', rand(1, 3))
   .then(resposta => {
     console.log(resposta)
     return wait('dados encotrados', rand(1, 3))
